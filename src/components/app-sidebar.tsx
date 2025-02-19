@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Home, Truck } from "lucide-react";
 
 import {
@@ -10,6 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
 
 // Menu items.
 const items = [
@@ -20,12 +23,12 @@ const items = [
   },
   {
     title: "Engins",
-    url: "/admin/engin",
+    url: "/engin",
     icon: Truck,
   },
   {
     title: "Livraisons",
-    url: "/admin/livraison",
+    url: "/livraison",
     icon: Box,
   },
   //   {
@@ -45,16 +48,16 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel>Transport_Petrolier</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
